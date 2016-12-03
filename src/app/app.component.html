@@ -1,53 +1,82 @@
  
  <div id="centro"  style="padding: 8% 5% 0 8%; text-align: center">
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper #5e35b1 deep-purple darken-1">
       <a href="#!" class="brand-logo"><i class="material-icons"></i>Matriculas</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html"><i class="material-icons">search</i>Buscar</a></li>
-        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">view_module</i>Datos</a></li>
+        <li><a href="mobile.html"><i class="material-icons">more_vert</i>Ayuda</a></li>
       </ul>
     </div>
   </nav>
-  
-  <div class="row">
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      </ul>
+  </div>
+
+
+   <div class="row">
     <div class="col s12 m4 l2" style="margin-top:20px;">
       <ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Preescolar</div>
       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-header"><i class="material-icons">place</i>Primaria</div>
       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
   </ul>
-    </div>  
-  </div>  
+    </div>
+    <br>
+    <br>
+    <div class="row">
+          <div class="col s12 m8">
+            <div class="col s12 m4">
+              <div class="card-panel z-depth-4 blue-grey darken-1">
+                <i class="material-icons blue-text">mode_edit</i>
+                <p class="center">Area de Profesores</p>
+              </div>
+            </div>
+            <div class="col s12 m4">
+               <div class="card-panel z-depth-4 blue-grey darken-1">
+                 <i class="material-icons green-text">android</i>
+                <p class="center">Area de Estudiante</p>
+               </div>
+            </div>
+            <div class="col s12 m4">
+               <div class="card-panel z-depth-4 blue-grey darken-1">
+                 <i class="material-icons yellow-text">contact_phone</i>
+                <p class="center">Area de Padre de Familia (Acudiente)</p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>  
 
-  <div class="row">
-  <div class="col s12">
+  <div class="col s8">
       <estudiante>
       </estudiante>
   </div>
-    <div class="row">
-  <div class="col s12">
-      <login>
-      </login>
+  
   </div>
   
-  
-
-  </div>
-
- </div>
-
   <script>
       
   $(document).ready(function(){
