@@ -8,90 +8,90 @@
    <br>
 
     <div id="centro"  style="text-align: center">
-      <form>
+      <form #formAlumno="ngForm" novalidate>
         <div class="row">
         <h5><p style="color:green; text-align:center">Registre datos Estudiante</p></h5>
         <br>    
         <div class="input-field col s4">
           <i class="material-icons prefix">perm_identity</i>
-          <input id="nombre" name="nombre" type="text" class="validate">
+          <input id="nombre" name="nombre" type="text" class="validate"
+          #nombreTxt="ngModel" [(ngModel)]="estuMatricula.nombre" required>
           <label for="nombre">Nombre</label>
          </div>
          <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="apellido" name="apellido" type="text" class="validate">
+          <input id="apellido" name="apellido" type="text" class="validate"
+          #apellidoTxt="ngModel" [(ngModel)]="estuMatricula.apellido" required>
           <label for="apellido">Apellido</label>
          </div>
          <div class="input-field col s4">
           <i class="material-icons prefix">contact_phone</i>
-          <input id="documento" name="documento" type="text" class="validate">
+          <input id="documento" name="documento" type="text" class="validate"
+          #documentoTxt="ngModel" [(ngModel)]="estuMatricula.documento" required>
           <label for="documento">Documento de Identidad</label>
         </div>
         <div class="input-field col s4">
+          <i class="material-icons prefix">contact_phone</i>
+          <input id="tipdocumento" name="tipdocumento" type="text" class="validate"
+          #tipdocumentoTxt="ngModel" [(ngModel)]="estuMatricula.tipdocumento" required>
+          <label for="documento">Tipo de Documento</label>
+        </div>
+        <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="edad" name="edad" type="text" class="validate">
+          <input id="edad" name="edad" type="text" class="validate"
+          #edadTxt="ngModel" [(ngModel)]="estuMatricula.edad" required>
           <label for="edad">Edad</label>
         </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="sexo" name="sexo" type="text" class="validate">
-          <label for="sexo">Sexo</label>
+          <input id="grado" name="grado" type="text" class="validate"
+          #gradoTxt="ngModel" [(ngModel)]="estuMatricula.grado" required>
+          <label for="grado">gradp</label>
         </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="fechanacicmiento" name="fechanacicmiento" type="date" class="validate">
-          <label for="fechanacicmiento"></label>
+          <input id="institucion" name="institucion" type="text" class="validate"
+          #institucionTxt="ngModel" [(ngModel)]="estuMatricula.institucion" required>
+          <label for="institucion">Escuela a Matricular</label>
         </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="rh" name="rh" type="text" class="validate">
-          <label for="rh">RH</label>
+          <input id="nomb_acudiente" name="nomb_acudiente" type="text" class="validate"
+          #nomb_acudienteTxt="ngModel" [(ngModel)]="estuMatricula.nomb_acudiente" required>
+          <label for="nomb_acudiente">Acudiente</label>
         </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="telefono" name="telefono" type="text" class="validate">
+          <input id="tel_acudiente" name="tel_acudiente" type="text" class="validate"
+          #tel_acudienteTxt="ngModel" [(ngModel)]="estuMatricula.tel_acudiente" required>
           <label for="telefono">Telefono</label>
         </div>
-      </div>
- 
-       <div class="row">
-         <h5><p style="color:green; text-align:center">Registre datos Acudiente</p></h5>
-         <br>
-         <div class="input-field col s4">
-          <i class="material-icons prefix">perm_identity</i>
-          <input id="nombreacudiente" name="nombreacudiente" type="text" class="validate">
-          <label for="nombreacudiente">Nombre Acudiente</label>
-        </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="apellidoacudiente" name="apellidoacudiente" type="text" class="validate">
-          <label for="apellido">Apellido Acudiente</label>
-        </div>
-        <div class="input-field col s4">
-          <i class="material-icons prefix">perm_identity</i>
-          <input id="parentesco" name="parentesco" type="text" class="validate">
-          <label for="parentesco">Parentesco</label>
-        </div>        
-        <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
-          <input id="correo" name="correo" type="email" class="validate">
+          <input id="correo" name="correo" type="email" class="validate"
+          #correoTxt="ngModel" [(ngModel)]="estuMatricula.correo" required>
           <label for="correo">Email</label>
         </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">label</i>
-          <input id="contresena" name="contresena" type="password" class="validate">
+          <input id="contresena" name="contresena" type="password" class="validate"
+          #contresenaTxt="ngModel" [(ngModel)]="estuMatricula.contresena" required>
           <label for="contrasena">contrasena</label>
         </div>
         <br>
         <br>
-        <div class="input-field col s4">                       
-        <button type="submit" name="enviar">Enviar datos</button>
         </div>
-       </div>
+         <div class="input-field col s4">                       
+       <button type="submit" 
+        name="action"
+        (click)="guardarEstudiante()">
+        Enviar datos
+        </button>
+        </div>
       </form>     
     </div>
-   </div>
-  </div> 
+  </div>
+</div>
 
   <div class="col s12 m6 l6">
    
@@ -110,12 +110,6 @@
           <label for="contrasena">contrasena</label>
         </div>
         <div class="input-field col s4">                       
-        <button type="submit" 
-        name="enviar"
-        [disabled]="!formCurso.valid"
-        (click)="datosMatricula()">
-        GuardarIngresar
-        </button>
         </div>
       </div>
      </form>

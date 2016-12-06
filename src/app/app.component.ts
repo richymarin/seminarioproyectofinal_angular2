@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Http } from '@angular/http';
 
-import { Estudiante } from './datos/datosestu';
+import { Alumno } from './datos/datosestu.datos';
 
 @Component({
   selector: 'app-root',

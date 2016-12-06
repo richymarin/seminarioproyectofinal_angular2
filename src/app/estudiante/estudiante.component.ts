@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Http } from '@angular/http';
 
-import { Alumno } from '../datos/datosestu';
+import { Alumno } from '../datos/datosestu.datos';
 
 @Component({
   selector: 'estudiante',
@@ -22,18 +22,21 @@ export class EstudianteComponent implements OnInit {
   ngOnInit() {
   }
 
-   public datosMatricula(){
-     
-      this.http.post(
-          "",
-          this.estuMatricula
-      ).subscribe((response)=>{
-          let respuesta = response.json();
-          if(respuesta.resultado == 1){
-            alert('Estudiante ingresado');
-          }else{
-            alert('Datos no registrados');
-          }
+  public guardarEstudiante()
+  {
+    this.http.post(
+      "http://proyectowebii.comlu.com/matricula/registromatricula.php",
+      this.estuMatricula
+    ).subscribe((response)=>{
+      let respuesta = response.json();
+      if(respuesta.resultado == 1){
+        alert("Curso guardado con éxito");
+      }      
+      else{
+        alert("Hubo un error al guardar el curso");
+      }
+
+  
 
       });
    
