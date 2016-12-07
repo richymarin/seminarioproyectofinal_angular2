@@ -10,5 +10,7 @@ import { Alumno } from './datos/datosestu.datos';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+    
  
 }

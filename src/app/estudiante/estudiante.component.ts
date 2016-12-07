@@ -13,6 +13,8 @@ export class EstudianteComponent implements OnInit {
 
   private estuMatricula:Alumno;
 
+  
+
   constructor(private http:Http) {
       
       this.estuMatricula = new Alumno();
@@ -36,14 +38,32 @@ export class EstudianteComponent implements OnInit {
         alert("Hubo un error al guardar el curso");
       }
 
-  
-
-      });
+      })
    
 
    } 
 
+    alumnosList:Array<Alumno> = new Array<Alumno>();
+   
+    buscarInstitucion(){
+      this.http
+      .get("http://proyectowebii.comlu.com/matricula/registromatricula.php")
+      .subscribe((response)=>{
+       this.alumnosList = response.json();
+       console.log(this.alumnosList);
+       let alumno = document.getElementById("modal_listado");
+       alumno.style.visibility = "visible";
+       
+
+      });
+
+    }
+
 
 }
+
+
+
+
 
 
