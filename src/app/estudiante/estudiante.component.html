@@ -10,97 +10,108 @@
     <div id="centro"  style="text-align: center">
       <form #formAlumno="ngForm" novalidate>
         <div class="row">
-        <h5><p style="color:green; text-align:center">Registre datos Estudiante</p></h5>
+        <h5><p style="color:green; text-align:center">Registre los datos Estudiante</p></h5>
         <br>    
         <div class="input-field col s4">
-          <i class="material-icons prefix">perm_identity</i>
+          <i class="material-icons prefix yellow-text">perm_identity</i>
           <input id="nombre" type="text" class="validate"
           [class.invalid]="!nombreTxt.valid"
           name="nombre"
           #nombreTxt="ngModel" [(ngModel)]="estuMatricula.nombre" required>
           <label for="nombre">Nombre</label>
+         <p>Ingrese Nombres Estudiante</p>
          </div>
          <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">perm_identity</i>
           <input id="apellido" type="text" class="validate"
           [class.invalid]="!apellidoTxt.valid"
           name="apellido"
           #apellidoTxt="ngModel" [(ngModel)]="estuMatricula.apellido" required>
           <label for="apellido">Apellido</label>
+          <p>Ingrese Apellidos Estudiante</p>
          </div>
          <div class="input-field col s4">
-          <i class="material-icons prefix">contact_phone</i>
+          <i class="material-icons prefix yellow-text">assignment_ind</i>
           <input id="documento" type="text" class="validate"
           [class.invalid]="!documentoTxt.valid"
           name="documento"
           #documentoTxt="ngModel" [(ngModel)]="estuMatricula.documento" required>
           <label for="documento">Documento de Identidad</label>
+          <p>Numero Documento</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">contact_phone</i>
+          <i class="material-icons prefix yellow-text">input</i>
           <input id="tipdocumento" type="text" class="validate"
           [class.invalid]="!tipdocumentoTxt.valid" 
           name="tipdocumento" 
           #tipdocumentoTxt="ngModel" [(ngModel)]="estuMatricula.tipdocumento" required>
           <label for="tipdocumento">Tipo de Documento</label>
+          <p>Tipo de Documento</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">person_pin</i>
           <input id="edad" type="text" class="validate"
           [class.invalid]="!edadTxt.valid"
           ng-pattern="/^[0-9]*$/"
           name="edad"
           #edadTxt="ngModel" [(ngModel)]="estuMatricula.edad" required>
           <label for="edad">Edad</label>
+          <p>Edad Estudiante</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">group_work</i>
           <input id="grado" type="text"
           class="validate"
           [class.invalid]="!gradoTxt.valid"
           name="grado"
           #gradoTxt="ngModel" [(ngModel)]="estuMatricula.grado" required>
           <label for="grado">grado</label>
+          <p>Grado al cual ingresa</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">subtitles</i>
           <input id="institucion" type="text" class="validate"
           [class.invalid]="!institucionTxt.valid"
           name="institucion"
           #institucionTxt="ngModel" [(ngModel)]="estuMatricula.institucion" required>
           <label for="institucion">Escuela a Matricular</label>
+          <p>Nombre de la Institucion</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">contact_phone</i>
           <input id="nomb_acudiente" type="text" class="validate"
           [class.invalid]="!nomb_acudienteTxt.valid"
           name="nomb_acudiente"
           #nomb_acudienteTxt="ngModel" [(ngModel)]="estuMatricula.nomb_acudiente" required>
           <label for="nomb_acudiente">Acudiente</label>
+          <p>Ingrese Nombre Acudiente</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">contact_phone</i>
           <input id="tel_acudiente" type="text" class="validate"
           [class.invalid]="!tel_acudienteTxt.valid"
           name="tel_acudiente"
           #tel_acudienteTxt="ngModel" [(ngModel)]="estuMatricula.tel_acudiente" required>
           <label for="telefono">Telefono</label>
+          <p>Ingrese Telefono Acudiente</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">language</i>
           <input id="correo" type="email" class="validate"
           [class.invalid]="!correoTxt.valid"
           name="correo"
           #correoTxt="ngModel" [(ngModel)]="estuMatricula.correo" required>
           <label for="correo">Email</label>
+          <p>Email</p>
         </div>
         <div class="input-field col s4">
-          <i class="material-icons prefix">label</i>
+          <i class="material-icons prefix yellow-text">vpn_key</i>
           <input id="contrasena" type="password" class="validate"
           [class.invalid]="!contrasenaTxt.valid"
           name="contrasena"
           #contrasenaTxt="ngModel" [(ngModel)]="estuMatricula.contrasena" required>
           <label for="contrasena">contrasena</label>
+          <p>Contraseña</p>
         </div>
         <br>
         <br>
@@ -152,22 +163,14 @@
             Lista
             <ul class="collection">
               <li *ngFor="let alumno of alumnosList">
-                  <p>
-                  Nombre : {{alumno.nombre}}<br>
-                  Apellido : {{alumno.apellido}} <br>
-                  Institucion : {{alumno.institucion}}</p>
+                  <tr><td>
+                  Nombre Alumno : {{alumno.nombre}}</td>
+                  <td>Grado : {{alumno.grado}}</td></tr> <hr>
               </li>
             </ul>
           </div>
        </li>
      </ul>
-
  </div>
 </div>
-
-
-
-
-
-
 

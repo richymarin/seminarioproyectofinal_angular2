@@ -32,10 +32,10 @@ export class EstudianteComponent implements OnInit {
     ).subscribe((response)=>{
       let respuesta = response.json();
       if(respuesta.resultado == 1){
-        alert("Curso guardado con éxito");
+        alert("Matricula exitosa");
       }      
       else{
-        alert("Hubo un error al guardar el curso");
+        alert("Error de datos ingresados");
       }
 
       })
